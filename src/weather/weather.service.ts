@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import axios, { AxiosInstance } from 'axios';
-import keys from 'src/config/keys';
 
 @Injectable()
 export class WeatherService {

@@ -1,7 +1,6 @@
 import { Injectable, ForbiddenException } from '@nestjs/common';
 import axios from 'axios';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import keys from 'src/config/keys';
 
 const moment = require('moment')
 const TelegramBot = require('node-telegram-bot-api');
