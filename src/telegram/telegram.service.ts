@@ -11,7 +11,8 @@ export class TelegramService {
     private readonly bot: any
 
     constructor() {
-        this.bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
+        const token = "6526380523:AAGh6KbEk_GtQy7xFB30EJwlWXffMOit6k8"
+        this.bot = new TelegramBot(token, { polling: true });
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
         //check whether user is blocked or not
