@@ -90,7 +90,7 @@ export class TelegramService {
 
     //scheduleing a job
     // need to update the time
-    @Cron(CronExpression.EVERY_DAY_AT_11AM)
+    @Cron(CronExpression.EVERY_30_MINUTES)
     async schedulingJobs() {
         const botSubscribers = await this.requestForGetAll();
         const weatherData = await this.getWeatherData();
