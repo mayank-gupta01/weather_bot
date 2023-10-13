@@ -54,7 +54,7 @@ export class TelegramService {
                     // Make a POST request to your server
                     if (!isExistingSubscriber) {
                         this.sendSubscriptionRequest(chatId, firstName, lastName);
-                        this.bot.sendMessage(chatId, `Thank you, for subscribing our channel!\nYou'll receive weather report every day at 8 AM.`);
+                        this.bot.sendMessage(chatId, `Thank you, for subscribing our channel!\nYou'll receive weather report every day at 10 AM.`);
                     }
                     else
                         this.bot.sendMessage(chatId, 'You already a subscriber');
@@ -90,7 +90,7 @@ export class TelegramService {
 
     //scheduleing a job
     // need to update the time
-    @Cron(CronExpression.EVERY_DAY_AT_8AM)
+    @Cron('30 4 * * *')
     async schedulingJobs() {
         const botSubscribers = await this.requestForGetAll();
         const weatherData = await this.getWeatherData();
